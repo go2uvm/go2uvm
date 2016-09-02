@@ -1,0 +1,15 @@
+Welcome to VerifWorks Go2UVM Package
+  -- The fastest way to get started with industry's standard Verification methodology
+
+Release Notes
+=============
+
+2016.06 version
+---------------
+
+Integrated SVUnit's UVM Report mock feature into go2uvm_base_test SVUnit is a standalone Unit testing framework from AgileSoC.com We reused SVUnit's UVM_REPORT_MOCK class and associated setup in Go2UVM This helps in predicting expected error messages via uvm_report_mock::expect_error() API
+
+2016.02 version
+---------------
+Added more examples
+Added basic TCL app to generate Go2UVM

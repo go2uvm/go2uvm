@@ -1,0 +1,8 @@
++incdir+$VW_GO2UVM_HOME/src
++incdir+../go2uvm
+
+$VW_GO2UVM_HOME/src/vw_go2uvm_pkg.sv
+#Give your DUT file name along with path
+../dut/fifo_rtl.v
+
+../go2uvm/fifo_go2uvm_top.sv

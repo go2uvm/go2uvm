@@ -1,0 +1,12 @@
+FIFO with Go2UVM test example
+
+To run the example, 
+---------------------
+
+Make sure env variable VW_GO2UVM_HOME is set correclty (Refer to ../../docs if needed)
+
+cd run_dir
+make cvc1 ; For Synopsys VCS
+make cvc2 ; For Mentor Questa
+make cvc3 ; For Cadence IUS
+make cvc4 ; For Aldec
