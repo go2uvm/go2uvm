@@ -1,0 +1,13 @@
+1. Add a reg_model (Use DVC_UVM_RAL tool to create)
+2. Instantiate the top level reg_block to env (vlb_ral_env.sv)
+3. Construct the reg_block
+
+4. Create reg_adaptor reg2bus & bus2reg (File: vlb_ral_adapter.sv)
+5. Write a test/seq
+    //
+    // Register prediction part:
+    //
+    // Replacing implicit register model prediction with explicit prediction
+    // based on APB bus activity observed by the APB agent monitor
+    // Set the predictor map:
+ 
