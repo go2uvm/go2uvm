@@ -1,6 +1,0 @@
-+incdir+$VW_GO2UVM_HOME/src
-$VW_GO2UVM_HOME/src/vw_go2uvm_pkg.sv
-
-+incdir+../go2uvm_tb_src/g2uvm_lv_1/
-+incdir+../dut_src
-../go2uvm_tb_src/g2uvm_lv_1/sprot_go2uvm_tb.sv

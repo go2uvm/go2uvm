@@ -1,5 +1,0 @@
-+incdir+$VW_GO2UVM_HOME/src
-$VW_GO2UVM_HOME/src/vw_go2uvm_pkg.sv
-
-../sva_src/simple_sva_example.sv
-../go2uvm_tb_src/vw_go2uvm_sva_tb.sv
