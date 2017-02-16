@@ -1,0 +1,9 @@
+
+{signal: [
+  {name: 'HCLK',       wave:'P.......',        period:2},
+  {name: 'HTRANS[1:0]',wave: "2.2.2.2.....2.2",data:"NONSEQ IDLE IDLE NONSEQ SEQ  "},
+  {name: 'HADDR[31:0]',wave:"2.2.2.2.....2.2", data:"A Y Z B B+4"},
+  {name:'HBURST[]2:0]',wave: "2.2.2.2.....2.2",   data:"SINGLE   INCR4 INCR4"},
+  {name:'HREADY',     wave:'1.0.......1.1.1'},
+  {name:'HRDATA[31:0]',wave:'2.3.......2.2.2',data:"  D[A] D[B]"}
+  ]}

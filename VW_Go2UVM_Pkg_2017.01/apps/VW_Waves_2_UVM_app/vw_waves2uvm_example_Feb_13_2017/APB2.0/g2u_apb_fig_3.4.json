@@ -1,0 +1,9 @@
+{signal: [
+  {name: 'PCLK',   wave:'P...'},
+  {name: 'PADDR',  wave:"x=..",data:["Addr1"]},
+  {name: 'PWRITE', wave:'x0..'},
+  {name: 'PSEL',   wave:'x1.x'},
+  {name: 'PENABLE',wave:'0.10'},
+  {name:'PRDATA',  wave:"x==x", data:["" ,"Data1"]},
+  {name:'PREADY',  wave:'x.1x'}
+]}

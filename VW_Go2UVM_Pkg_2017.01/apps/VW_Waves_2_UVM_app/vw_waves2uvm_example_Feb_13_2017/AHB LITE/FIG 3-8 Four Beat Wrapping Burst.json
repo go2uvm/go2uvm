@@ -1,0 +1,12 @@
+
+{signal: [
+  {name: 'HCLK',       wave:'P......',        period:2},
+  {name: 'HTRANS[1:0]',wave: "2.2...2.2.2.x",data: "NONSEQ SEQ SEQ SEQ"},
+  {name: 'HADDR[31:0]',wave:"2.2...2.2.2.x", data: "0x38 0x3c 0x30 0x34"},
+  {name: 'HWRITE',     wave:'1.1...1.1.2.x'},
+  {name:'HBURST[]2:0]',wave: '2.........2.x',   data:"WRAP4"},
+  {name:'HSIZE[2:0]', wave: '2.........2.x', data: "Word"},
+  {name:'HPROT[:0]',  wave:'2.........2.x'},
+  {name:'HREADY',     wave:'1.0.1.1.1.1.2'},
+  {name:'HWDATA[31:0]',wave:'2.2...2.2.2.x',data:" d[38] d[3c] d[30] d[34]"}
+  ]}
