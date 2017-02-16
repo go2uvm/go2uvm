@@ -1,8 +1,0 @@
-
-{signal: [
-  {name: 'HCLK',   wave:'P....',                            period:2},
-  {name: 'HADDR[31:0]',wave:"=.=.....x",data:["A","B"]},
-  {name: 'HWRITE', wave:'0.3.....x'},
-  {name:'HRDATA[31:0]',wave:'x.5....5x', data:" D[A]"},
-  {name:'HREADY',  wave: '1.0...1.x'}
-]}

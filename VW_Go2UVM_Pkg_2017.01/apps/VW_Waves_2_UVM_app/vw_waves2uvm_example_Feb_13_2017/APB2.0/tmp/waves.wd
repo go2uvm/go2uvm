@@ -1,7 +1,0 @@
-{signal: [
-  {name: "clk",   wave:"P..."},
-  {name: "PWRITE", wave:"x0.."},
-  {name: "PSEL",   wave:"x1.x"},
-  {name: "PENABLE",wave:"0.10"},
-  {name:"PREADY",  wave:"x.1x"}
-]}
