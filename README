@@ -30,5 +30,12 @@ We ship this free package as a SystemVerilog file. You need to compile this file
 8. Contact support@verifworks.com if you need any assistance
 
   
+NOTE on Licensing
+******************
+We use LGPL 3 license for Go2UVM release online. We have separate commerical licensed versions if desired, please contact srini@cvcblr.com and/or support@verifworks.com
+
+Any attempts to decrypt the obfuscated code is not allowed and is a VIOLATION of the copyrights. 
+
+Should you need plain, un-obfuscated code, contact us via email please.
 
 
