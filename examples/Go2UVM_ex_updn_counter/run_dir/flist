@@ -1,5 +1,0 @@
-+incdir+$VW_GO2UVM_HOME/src
-$VW_GO2UVM_HOME/src/vw_go2uvm_pkg.sv
-
-../dut/up_down_cunter.sv
-../tb/tb_up_down_counter.sv

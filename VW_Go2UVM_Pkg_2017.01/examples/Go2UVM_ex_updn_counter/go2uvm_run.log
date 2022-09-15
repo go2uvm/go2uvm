@@ -1,0 +1,227 @@
+irun(64): 13.20-p002: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	irun(64)	13.20-p002: Started on Feb 09, 2017 at 18:30:04 IST
+irun
+	-access +rw
+	-uvm
+	-f flist
+		+incdir+/home/student/tools/VW_Go2UVM_Pkg_2017.01/src
+		/home/student/tools/VW_Go2UVM_Pkg_2017.01/src/vw_go2uvm_pkg.sv
+		../dut/up_down_cunter.sv
+		../tb/tb_up_down_counter.sv
+	+UVM_TESTNAME=go2uvm_count_test
+	+UVM_VERBOSITY=UVM_HIGH
+	-l go2uvm_run.log
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_HIGH
+
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /tools/eda/cadence/IUS_13.2/tools/methodology/UVM/CDNS-1.1d
+file: /home/student/tools/VW_Go2UVM_Pkg_2017.01/src/vw_go2uvm_pkg.sv
+	package worklib.vw_go2uvm_pkg:sv
+		errors: 0, warnings: 0
+file: ../dut/up_down_cunter.sv
+	module worklib.up_down_counter:sv
+		errors: 0, warnings: 0
+file: ../tb/tb_up_down_counter.sv
+	interface worklib.count_if:sv
+		errors: 0, warnings: 0
+	module worklib.go2uvm_count:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		{*Name Protected*}
+		cdns_uvm_pkg
+		vw_go2uvm_pkg
+		$unit_0x00000000
+		go2uvm_count
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.\$unit_0x00000000 :compilation_unit <0x57cdd6ea>
+			streams:   0, words:     0
+		worklib.cdns_uvm_pkg:sv <0x040e5255>
+			streams: 135, words: 381662
+		worklib.cdns_uvm_pkg:sv <0x661e0792>
+			streams:   9, words: 10832
+		worklib.cdns_uvm_pkg:sv <0x7f75051a>
+			streams:  28, words: 55972
+			streams:  15, words: 27313
+		worklib.count_if:sv <0x37832920>
+			streams:   8, words:  5365
+		worklib.go2uvm_count:sv <0x1bdd1534>
+			streams:   9, words:  3466
+		worklib.up_down_counter:sv <0x7968c131>
+			streams:   2, words:  1288
+		worklib.uvm_pkg:sv <0x077e4570>
+			streams:   9, words:  8920
+		worklib.uvm_pkg:sv <0x0b97d315>
+			streams:  23, words: 47721
+		worklib.uvm_pkg:sv <0x0c5a9213>
+			streams:  22, words: 79167
+		worklib.uvm_pkg:sv <0x0d0dcd8a>
+			streams:   9, words:  5389
+		worklib.uvm_pkg:sv <0x114b6c65>
+			streams:  25, words: 102062
+		worklib.uvm_pkg:sv <0x1a67bb7b>
+			streams:   7, words:  5384
+		worklib.uvm_pkg:sv <0x224964fe>
+			streams:  27, words: 69639
+		worklib.uvm_pkg:sv <0x22d87870>
+			streams:  25, words: 123837
+		worklib.uvm_pkg:sv <0x280f363b>
+			streams: 4719, words: 17537975
+		worklib.uvm_pkg:sv <0x29c065fc>
+			streams:  27, words: 88324
+		worklib.uvm_pkg:sv <0x3116d8b4>
+			streams:  27, words: 66288
+		worklib.uvm_pkg:sv <0x31375448>
+			streams:  26, words: 63359
+		worklib.uvm_pkg:sv <0x31711fe7>
+			streams:   7, words:  3568
+		worklib.uvm_pkg:sv <0x3b869f69>
+			streams:   7, words:  3568
+		worklib.uvm_pkg:sv <0x3dcc97f5>
+			streams:   7, words:  3869
+		worklib.uvm_pkg:sv <0x3e4e9700>
+			streams:  16, words: 38076
+		worklib.uvm_pkg:sv <0x4c27d015>
+			streams:  26, words: 119815
+		worklib.uvm_pkg:sv <0x4fc62782>
+			streams:  17, words: 24053
+		worklib.uvm_pkg:sv <0x4fd09a4e>
+			streams:   8, words: 14468
+		worklib.uvm_pkg:sv <0x51f59a7c>
+			streams:  25, words: 107090
+		worklib.uvm_pkg:sv <0x55efe3ac>
+			streams:  26, words: 59406
+		worklib.uvm_pkg:sv <0x5b22dad4>
+			streams:  71, words: 246799
+		worklib.uvm_pkg:sv <0x5bde96d2>
+			streams:  29, words: 205069
+		worklib.uvm_pkg:sv <0x5be153f6>
+			streams:   7, words: 12976
+		worklib.uvm_pkg:sv <0x5f9d2128>
+			streams:  27, words: 74858
+		worklib.uvm_pkg:sv <0x61b7bde4>
+			streams:   7, words:  5384
+		worklib.uvm_pkg:sv <0x63a0b45c>
+			streams:  28, words: 53850
+		worklib.uvm_pkg:sv <0x64aef802>
+			streams:  25, words: 112308
+		worklib.uvm_pkg:sv <0x68ac7ba3>
+			streams:  25, words: 90740
+		worklib.uvm_pkg:sv <0x7391e801>
+			streams:   7, words:  5384
+		worklib.uvm_pkg:sv <0x74e200bd>
+			streams:  27, words: 51509
+		worklib.uvm_pkg:sv <0x762382bd>
+			streams:  94, words: 328278
+		worklib.uvm_pkg:sv <0x79ac0c54>
+			streams:  27, words: 71505
+		worklib.uvm_pkg:sv <0x79b41436>
+			streams:  25, words: 127792
+		worklib.uvm_pkg:sv <0x7e6b76c1>
+			streams:   8, words: 13823
+		worklib.vw_go2uvm_pkg:sv <0x4d9c90ea>
+			streams:  31, words: 53331
+		worklib.vw_go2uvm_pkg:sv <0x5b38d0c1>
+			streams:  12, words: 38727
+		worklib.vw_go2uvm_pkg:sv <0x78144916>
+			streams:  13, words: 11058
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+		Modules:                       2       2
+		Interfaces:                    1       1
+		Verilog packages:              4       4
+		Registers:                 13163   10067
+		Scalar wires:                  5       -
+		Vectored wires:                3       -
+		Named events:                  4      12
+		Always blocks:                 1       1
+		Initial blocks:              257     147
+		Clocking blocks:               1       1
+		Clocking items:                6       6
+		Parallel blocks:              26      27
+		Pseudo assignments:            7       7
+		Assertions:                    5       5
+		Compilation units:             1       1
+		SV Class declarations:       191     305
+		SV Class specializations:    345     345
+	Writing initial simulation snapshot: worklib.go2uvm_count:sv
+Loading snapshot worklib.go2uvm_count:sv .................... Done
+SVSEED default: 1
+ncsim> source /tools/eda/cadence/IUS_13.2/tools/inca/files/ncsimrc
+ncsim> source /tools/eda/cadence/IUS_13.2/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+ncsim> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (13.20-p002)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0.00 ns: reporter [RNTST] Running test go2uvm_count_test...
+UVM_INFO ../tb/tb_up_down_counter.sv(50) @ 0.00 ns: go2uvm_test [go2uvm_test] Successfully hooked up virtual interface
+UVM_INFO ../tb/tb_up_down_counter.sv(50) @ 0.00 ns: uvm_test_top [uvm_test_top] Successfully hooked up virtual interface
+UVM_INFO ../tb/tb_up_down_counter.sv(53) @ 0.00 ns: uvm_test_top [uvm_test_top] Start of reset
+UVM_INFO ../tb/tb_up_down_counter.sv(53) @ 0.00 ns: go2uvm_test [go2uvm_test] Start of reset
+UVM_INFO ../tb/tb_up_down_counter.sv(58) @ 105.00 ns: uvm_test_top [uvm_test_top] End of reset
+UVM_INFO ../tb/tb_up_down_counter.sv(58) @ 105.00 ns: go2uvm_test [go2uvm_test] End of reset
+UVM_INFO @ 105.00 ns: uvm_test_top [uvm_test_top] Driving stimulus via UVM
+UVM_INFO ../tb/tb_up_down_counter.sv(63) @ 105.00 ns: uvm_test_top [uvm_test_top] Start of Test
+UVM_INFO @ 105.00 ns: go2uvm_test [go2uvm_test] Driving stimulus via UVM
+UVM_INFO ../tb/tb_up_down_counter.sv(63) @ 105.00 ns: go2uvm_test [go2uvm_test] Start of Test
+UVM_INFO ../tb/tb_up_down_counter.sv(97) @ 505.00 ns: uvm_test_top [uvm_test_top] End of Test
+UVM_INFO @ 505.00 ns: uvm_test_top [uvm_test_top] End of stimulus
+UVM_INFO ../tb/tb_up_down_counter.sv(97) @ 505.00 ns: go2uvm_test [go2uvm_test] End of Test
+UVM_INFO @ 505.00 ns: go2uvm_test [go2uvm_test] End of stimulus
+[5;34m
+*** Congratulations! Test PASSED with NO (or with predicted) UVM_ERRORs ***
+[0m
+UVM_INFO @ 505.00 ns: go2uvm_test [go2uvm_test] Thanks for using VerifWorks's Go2UVM Package, provide your feedback at http://www.verifworks.com
+[5;34m
+*** Congratulations! Test PASSED with NO (or with predicted) UVM_ERRORs ***
+[0m
+UVM_INFO @ 505.00 ns: uvm_test_top [uvm_test_top] Thanks for using VerifWorks's Go2UVM Package, provide your feedback at http://www.verifworks.com
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   17
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[go2uvm_test]     8
+[uvm_test_top]     8
+Simulation complete via $finish(1) at time 505 NS + 81
+/tools/eda/cadence/IUS_13.2/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+ncsim> exit
+TOOL:	irun(64)	13.20-p002: Exiting on Feb 09, 2017 at 18:30:23 IST  (total: 00:00:19)

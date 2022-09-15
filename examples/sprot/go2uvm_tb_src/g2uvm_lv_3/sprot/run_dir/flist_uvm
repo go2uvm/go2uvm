@@ -1,8 +1,0 @@
-+incdir+../tb_src
-+incdir+../dut_src
-+incdir+../seq_tests
-../tb_src/sprot_pkg.sv
-../tb_src/sprot_if.sv
-../tb_src/sprot_assertions_if.sv
-../tb_src/sprot_sva_bind.sv
-../seq_tests/sprot_tb_dut_top.sv
