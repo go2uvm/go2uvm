@@ -1,0 +1,7 @@
++incdir+$VW_GO2UVM_HOME/src
+$VW_GO2UVM_HOME/src/vw_go2uvm_pkg.sv
+
++incdir+../go2uvm_tb_src
++incdir+../dut_src
+../dut_src/simple_protocol.sv
+../go2uvm_tb_src/sprot_go2uvm_top.sv

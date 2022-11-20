@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated on 2015-03-01 at 08:45 (UTC) by AirHDL version 2015.02.1 -->
+<spirit:component
+    xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    
+    <spirit:vendor>airhdl.com</spirit:vendor>
+    <spirit:library>user</spirit:library>
+    <spirit:name>i2c_spec</spirit:name>
+    <spirit:version>1.0</spirit:version>
+
+    <spirit:memoryMaps>
+        <spirit:memoryMap>
+            <spirit:name>S_AXI</spirit:name>
+                <spirit:addressBlock>
+                    <spirit:name>S_AXI_reg</spirit:name>
+                    <spirit:baseAddress>0x0</spirit:baseAddress>
+                    <spirit:range spirit:format="long">28</spirit:range>
+                    <spirit:width>32</spirit:width>
+                    <spirit:usage>register</spirit:usage> 
+
+                    <spirit:register>
+                        <spirit:name>PRERlo</spirit:name>
+                        <spirit:description>Clock Prescale register low-byte</spirit:description>
+                        <spirit:addressOffset>0x0</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:field>
+                            <spirit:name>Prescale_register</spirit:name>
+                            <spirit:description>This register is used to prescale the SCL clock line.</spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>7</spirit:bitWidth>
+                        </spirit:field>
+                    </spirit:register>
+
+                    <spirit:register>
+                        <spirit:name>PRERhi</spirit:name>
+                        <spirit:description>Clock Prescale register high-byte</spirit:description>
+                        <spirit:addressOffset>0x4</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:field>
+                            <spirit:name>Prescale_register</spirit:name>
+                            <spirit:description>This register is used to prescale the SCL clock line.</spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>7</spirit:bitWidth>
+                        </spirit:field>
+                    </spirit:register>
+
+                    <spirit:register>
+                        <spirit:name>CTR</spirit:name>
+                        <spirit:description>Control register</spirit:description>
+                        <spirit:addressOffset>0x8</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>read-write</spirit:access>
+                        <spirit:field>
+                            <spirit:name>EN</spirit:name>
+                            <spirit:description>I2C core enable bit.
+When set to ?1?, the core is enabled.
+When set to ?0?, the core is disabled.</spirit:description>
+                            <spirit:bitOffset>7</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>IEN</spirit:name>
+                            <spirit:description>I2C core interrupt enable bit.
+When set to ?1?, interrupt is enabled.
+When set to ?0?, interrupt is disabled.</spirit:description>
+                            <spirit:bitOffset>6</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>Reserved</spirit:name>
+                            <spirit:description></spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>6</spirit:bitWidth>
+                        </spirit:field>
+                    </spirit:register>
+
+                    <spirit:register>
+                        <spirit:name>TXR</spirit:name>
+                        <spirit:description>Transmit register</spirit:description>
+                        <spirit:addressOffset>0xC</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>write-only</spirit:access>
+                        <spirit:field>
+                            <spirit:name>Transmit_register_0</spirit:name>
+                            <spirit:description>Next byte to transmit via I2C</spirit:description>
+                            <spirit:bitOffset>1</spirit:bitOffset>
+                            <spirit:bitWidth>7</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>Transmit_register_1</spirit:name>
+                            <spirit:description>In case of a data transfer this bit represent the data?s LSB.
+In case of a slave address transfer this bit represents the RW bit.
+?1? = reading from slave
+?0? = writing to slave</spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                    </spirit:register>
+
+                    <spirit:register>
+                        <spirit:name>RXR</spirit:name>
+                        <spirit:description>Receive register</spirit:description>
+                        <spirit:addressOffset>0x10</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>read-only</spirit:access>
+                        <spirit:field>
+                            <spirit:name>Receive_register</spirit:name>
+                            <spirit:description>Last byte received via I2C</spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>8</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                    </spirit:register>
+
+                    <spirit:register>
+                        <spirit:name>CR</spirit:name>
+                        <spirit:description>Command register</spirit:description>
+                        <spirit:addressOffset>0x14</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>write-only</spirit:access>
+                        <spirit:field>
+                            <spirit:name>STA</spirit:name>
+                            <spirit:description>generate (repeated) start condition</spirit:description>
+                            <spirit:bitOffset>7</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>STO</spirit:name>
+                            <spirit:description>generate stop condition</spirit:description>
+                            <spirit:bitOffset>6</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>RD</spirit:name>
+                            <spirit:description>read from slave</spirit:description>
+                            <spirit:bitOffset>5</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>WR</spirit:name>
+                            <spirit:description>write to slave</spirit:description>
+                            <spirit:bitOffset>4</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>ACK</spirit:name>
+                            <spirit:description>when a receiver, sent ACK (ACK = ?0?) or NACK (ACK = ?1?)</spirit:description>
+                            <spirit:bitOffset>3</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>Reserved</spirit:name>
+                            <spirit:description></spirit:description>
+                            <spirit:bitOffset>1</spirit:bitOffset>
+                            <spirit:bitWidth>2</spirit:bitWidth>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>IACK</spirit:name>
+                            <spirit:description>Interrupt acknowledge. When set, clears a pending interrupt.</spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                        </spirit:field>
+                    </spirit:register>
+
+                    <spirit:register>
+                        <spirit:name>SR</spirit:name>
+                        <spirit:description>Status register</spirit:description>
+                        <spirit:addressOffset>0x18</spirit:addressOffset>
+                        <spirit:size>32</spirit:size>
+                        <spirit:access>read-only</spirit:access>
+                        <spirit:field>
+                            <spirit:name>RxACK</spirit:name>
+                            <spirit:description>Received acknowledge from slave.
+This flag represents acknowledge from the addressed slave.
+?1? = No acknowledge received
+?0? = Acknowledge received</spirit:description>
+                            <spirit:bitOffset>7</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>Busy</spirit:name>
+                            <spirit:description>I2C bus busy
+?1? after START signal detected
+?0? after STOP signal detected</spirit:description>
+                            <spirit:bitOffset>6</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>AL</spirit:name>
+                            <spirit:description>Arbitration lost
+This bit is set when the core lost arbitration. Arbitration is lost when:
+? a STOP signal is detected, but non requested
+? The master drives SDA high, but SDA is low.
+See bus-arbitration section for more information.</spirit:description>
+                            <spirit:bitOffset>5</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>Reserved</spirit:name>
+                            <spirit:description></spirit:description>
+                            <spirit:bitOffset>2</spirit:bitOffset>
+                            <spirit:bitWidth>3</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>TIP</spirit:name>
+                            <spirit:description>Transfer in progress.
+?1? when transferring data
+?0? when transfer complete</spirit:description>
+                            <spirit:bitOffset>1</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                        <spirit:field>
+                            <spirit:name>I_F</spirit:name>
+                            <spirit:description>Interrupt Flag. This bit is set when an interrupt is pending, which
+will cause a processor interrupt request if the IEN bit is set.
+The Interrupt Flag is set when:
+? one byte transfer has been completed
+? arbitration is lost</spirit:description>
+                            <spirit:bitOffset>0</spirit:bitOffset>
+                            <spirit:bitWidth>1</spirit:bitWidth>
+                            <spirit:volatile>true</spirit:volatile>
+                        </spirit:field>
+                    </spirit:register>
+
+                </spirit:addressBlock>
+
+        </spirit:memoryMap>
+    </spirit:memoryMaps>
+
+</spirit:component>
