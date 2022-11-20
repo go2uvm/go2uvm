@@ -1,0 +1,55 @@
+/* 
+* Copyright (c) 2004-2017 VerifWorks, Bangalore, India
+* http://www.verifworks.com 
+* Contact: support@verifworks.com 
+* 
+* This program is part of Go2UVM at www.go2uvm.org
+* Some portions of Go2UVM are free software.
+* You can redistribute it and/or modify  
+* it under the terms of the GNU Lesser General Public License as   
+* published by the Free Software Foundation, version 3.
+*
+* VerifWorks reserves the right to obfuscate part or full of the code
+* at any point in time. 
+* We also support a comemrical licensing option for an enhanced version
+* of Go2UVM, please contact us via support@verifworks.com
+
+* This program is distributed in the hope that it will be useful, but 
+* WITHOUT ANY WARRANTY; without even the implied warranty of 
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+* Lesser General Lesser Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+Using Go2UVM Register layer
+*****************************
+
+1. Interface should be named as g2u_reg_if (Functionality can be anything)
+2. Interface should have g2u_reset(), g2_write(), g2u_read() tasks
+
+ENV file
+--------------------------------------------
+1. Use Go2UVM provided agent as UVC: g2u_reg_agent
+2. Instanitate the reg_block
+3. Build agent, reg_block
+4. Call set_sequencer
+
+ this.vlb_reg_block_0.vlb_map.set_sequencer(this.vlb_g2u_agent_0.g2u_reg_sequencer_0, this.vlb_g2u_agent_0.g2u_reg_adapter_0);
+
+
+5. A `define is neeeded to ease test writers. It is to point to the REG_BLOCK, e.g.:
+
+`define VLB_REG_BLOCK g2u_env_0.vlb_reg_block_0
+
+Env name is fixed to be g2u_env_0 by the macros. The reg block can be anything, but preferably <design_name>_reg_block_0  
+
+6. Defines for each register will be handy for custom tests
+
+
+`define VL_CTRL_REG g2u_env_0.vlb_reg_block_0.vl_ctrl_reg
+`define VL_DATA_REG g2u_env_0.vlb_reg_block_0.vl_data_reg
+
+
