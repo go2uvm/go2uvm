@@ -59,7 +59,6 @@ gen_rvra_do:
 	echo "alib work" >> go2uvm_rvra.do
 	echo "adel -all " >> go2uvm_rvra.do
 	echo "transcript file go2uvm_comp.log" >> go2uvm_rvra.do
-	#echo 'set VW_GO2UVM_HOME $$env(VW_GO2UVM_HOME)' >> go2uvm_rvra.do
 	echo "set VW_GO2UVM_HOME $(VW_GO2UVM_HOME)" >> go2uvm_rvra.do
 	echo "alog -dbg \$$UVMCOMP -msg 0 -error_limit 1 -f flist" >> go2uvm_rvra.do
 	echo "transcript file go2uvm_run.log" >> go2uvm_rvra.do
