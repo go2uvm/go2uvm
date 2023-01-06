@@ -35,6 +35,10 @@ class go2uvm_sig_access extends uvm_object;
   static string sig_val_s;
   static string verbose_s;
 
+  function new (string name = "go2uvm_sig_access");
+    super.new (name);
+  endfunction : new
+
   extern static function void g2u_force (string sig_name, 
     logic [`VW_G2U_SIG_MAX_W-1:0] sig_val, 
     bit verbose = 1,
