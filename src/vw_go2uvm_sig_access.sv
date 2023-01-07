@@ -38,6 +38,9 @@
     int no_rel_time; 
     int no_cancel_period;
 
+    reg [`VW_G2U_SIG_MAX_W-1:0] aldec_lv_src_sig;
+    string sig_name_s;
+
     sig_name_s = sig_name;
     sig_val_s.itoa(sig_val);
 
@@ -85,6 +88,26 @@
 
    `endif // INCA
 
+    `ifdef _VCP
+      // For Aldec Riviera-PRO
+      /*
+      For the Verilog task, the value must be one of the following;
+      0 — default, which is “freeze” for unresolved objects or “drive” 
+          for resolved objects
+      1 — deposit
+      2 — drive
+      3 — freeze
+      */
+
+      // $signal_agent(<source>, <dest>, <verbose>)
+      aldec_lv_src_sig = sig_val;
+
+      sig_val_s = {"10#",sig_val_s};
+      // $signal_agent(".aldec_lv_src_sig", sig_name_s, verbose);
+      uvm_hdl_force (sig_name_s, sig_val);
+
+   `endif // _VCP
+
   endfunction : g2u_force
 
   function void go2uvm_sig_access::g2u_deposit (string sig_name, 
@@ -96,6 +119,9 @@
     int no_rel_time; 
     int no_cancel_period;
     string sig_val_s;
+    string sig_name_s;
+
+    sig_name_s = sig_name;
 
     sig_val_s.itoa(sig_val);
     sig_val_s = {"10#",sig_val_s};
@@ -143,6 +169,8 @@
 
    `endif // INCA
 
+    uvm_hdl_deposit (sig_name_s, sig_val);
+
   endfunction : g2u_deposit
 
 
@@ -161,6 +189,8 @@
 
    `ifdef INCA
    `endif // INCA
+
+    uvm_hdl_release (sig_name);
 
   endfunction : g2u_release
 
