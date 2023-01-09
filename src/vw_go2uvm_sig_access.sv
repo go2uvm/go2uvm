@@ -104,6 +104,7 @@
 
       sig_val_s = {"10#",sig_val_s};
       // $signal_agent(".aldec_lv_src_sig", sig_name_s, verbose);
+      $display ("SIG: %s", sig_name_s);
       uvm_hdl_force (sig_name_s, sig_val);
 
    `endif // _VCP
