@@ -72,6 +72,14 @@
      end \
    end
 
+`define g2u_rand_with(XN, CNST) \
+   begin \
+     if (!XN.randomize() with CNST) begin \
+       uvm_report_warning ("RNDFLD",  $sformatf ("Failed to randmoize transaction: %s ", XN.sprint()), \
+        UVM_NONE, `uvm_file, `uvm_line); \
+     end \
+   end
+
 
 `define vw_uvm_warning(ID,MSG) \
    begin \
