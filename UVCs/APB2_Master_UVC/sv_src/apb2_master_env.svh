@@ -24,3 +24,17 @@
 */
 
 
+class apb2_master_env extends uvm_env;
+
+  apb2_master_agent apb2_master_agent_0;
+
+  `uvm_component_utils(apb2_master_env)
+
+  function new(string name, uvm_component parent);
+    super.new(.name(name), .parent(parent));
+  endfunction : new
+
+  extern virtual function void build_phase(uvm_phase phase);
+
+endclass : apb2_master_env
+

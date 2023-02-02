@@ -24,3 +24,8 @@
 */
 
 
+task apb2_master_rand_seq::body();
+  `uvm_info(get_name(),$sformatf(":Sequence is Running ...."),UVM_MEDIUM)
+  `uvm_do(req)
+`uvm_info(get_name(),$sformatf(":Sequence is Complete ...."),UVM_MEDIUM)
+endtask : body

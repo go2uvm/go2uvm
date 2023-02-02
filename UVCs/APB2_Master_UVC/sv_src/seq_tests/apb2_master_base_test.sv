@@ -24,3 +24,24 @@
 */
 
 
+function void apb2_master_base_test::build_phase(uvm_phase phase);
+  super.build_phase(.phase(phase));
+  apb2_master_env_0 = apb2_master_env::type_id::create(.name("apb2_master_env"),
+                                    .parent(this));
+endfunction : build_phase
+
+
+function void apb2_master_base_test::connect_phase(uvm_phase phase);
+  uvm_root::get().print_topology();
+endfunction : connect_phase
+
+
+task apb2_master_base_test::main_phase(uvm_phase phase);
+  phase.raise_objection(this);
+  `uvm_info(get_name(),"Test is running...",UVM_MEDIUM)
+  #1000;
+  //delay is simple end of test mechanism
+  //use objections in sequences for better end of test detection
+  `uvm_info(get_name(), "End of main phase", UVM_MEDIUM)
+  phase.drop_objection(this);
+endtask : main_phase

@@ -24,3 +24,14 @@
 */
 
 
+task apb2_master_output_monitor::run_phase(uvm_phase phase);
+  `g2u_display("Run Phase is Running ..") 
+  collect_data();
+endtask : run_phase 
+ 
+task apb2_master_output_monitor::collect_data();
+    begin 
+
+
+    end
+endtask : collect_data

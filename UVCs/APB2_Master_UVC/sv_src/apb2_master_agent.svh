@@ -24,3 +24,27 @@
 */
 
 
+class apb2_master_agent extends uvm_agent;
+
+  apb2_master_sequencer apb2_master_sequencer_0;
+  apb2_master_driver apb2_master_driver_0;
+  apb2_master_input_monitor apb2_master_input_monitor_0;
+//  apb2_master_output_monitor apb2_master_output_monitor_0;
+  apb2_master_scoreboard apb2_master_scoreboard_0;
+//  apb2_master_fcov apb2_master_fcov_0;
+
+  virtual  apb2_master_if apb2_master_if_0;
+
+  `uvm_component_utils_begin (apb2_master_agent)
+    `uvm_field_enum(uvm_active_passive_enum, is_active, UVM_DEFAULT)
+  `uvm_component_utils_end
+
+  function new(string name, uvm_component parent);
+    super.new(.name(name), .parent(parent));
+  endfunction : new
+
+  extern virtual function void build_phase(uvm_phase phase);
+  extern virtual function void connect_phase(uvm_phase phase);
+
+endclass : apb2_master_agent
+

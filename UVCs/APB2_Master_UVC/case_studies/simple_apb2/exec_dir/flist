@@ -1,0 +1,5 @@
+-f ${VW_GO2UVM_HOME}/UVCs/APB2_Master_UVC/g2u_apb2_master_uvc.f
++incdir+../
+../slave_apb.v 
+../apb2_master_tb_dut_top.sv
+

@@ -24,3 +24,36 @@
 */
 
 
+import apb2_master_pkg::*;
+interface apb2_master_if (input logic pclk);
+ 
+  logic pselx;
+  logic presetn;
+  logic pwrite;
+  logic penable;
+  logic [DATA_WIDTH-1:0] pwdata;
+  logic [ADDR_WIDTH-1:0] paddr;
+  logic [DATA_WIDTH-1:0] prdata;
+
+//Clocking block declaration
+  clocking apb_driver_cb @(posedge pclk);
+    output presetn;
+    output pwrite;
+    output penable;
+    output pwdata;
+    output paddr;
+    output pselx;
+    input prdata;
+  endclocking:apb_driver_cb
+
+  clocking apb_monitor_cb @(posedge pclk);
+    input presetn;
+    input pwrite;
+    input penable;
+    input pwdata;
+    input paddr;
+    input pselx;
+    input prdata;
+  endclocking:apb_monitor_cb 
+
+endinterface : apb2_master_if

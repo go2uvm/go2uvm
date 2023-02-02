@@ -59,9 +59,10 @@ import vw_go2uvm_pkg::*;
 
   task main ();
     `g2u_display("Starting force test");
-    g2u_force("/sprot_go2uvm/sprot_0/byte_val", 22);
+    g2u_force("sprot_go2uvm.aldec_src_ex", 22);
+    g2u_force("sprot_go2uvm.sprot_0.byte_val", 22);
     #100;
-    g2u_force("/sprot_go2uvm/sprot_0/byte_val", 'haa);
+    g2u_force("sprot_go2uvm.sprot_0.byte_val", 'haa);
     #100;
     `g2u_display ("End of main")
   endtask : main

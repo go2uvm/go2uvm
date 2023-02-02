@@ -24,3 +24,30 @@
 */
 
 
+class apb2_master_scoreboard extends uvm_scoreboard;
+
+    apb2_master_xactn trans;
+
+  `uvm_component_utils_begin(apb2_master_scoreboard)
+    `uvm_field_object(trans,UVM_ALL_ON)
+  `uvm_component_utils_end   
+
+ uvm_tlm_analysis_fifo #(apb2_master_xactn) in_afifo; 
+// uvm_tlm_analysis_fifo #(apb2_master_xactn) out_afifo; 
+ 
+  function new(string name, uvm_component parent);
+    super.new(.name(name),.parent(parent));
+     in_afifo = new("in_afifo",this);
+//     out_afifo = new("out_afifo",this);
+  endfunction : new
+ 
+  int i;
+  int k;
+  int imax;
+  int pass_count, fail_count, invl_count;
+  bit [DATA_WIDTH-1:0]apb_mem [0:32];
+
+  extern virtual task run_phase(uvm_phase phase);
+
+endclass : apb2_master_scoreboard
+

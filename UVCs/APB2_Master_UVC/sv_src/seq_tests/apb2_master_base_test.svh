@@ -24,3 +24,19 @@
 */
 
 
+class apb2_master_base_test extends uvm_test;
+
+  apb2_master_env apb2_master_env_0;
+
+  `uvm_component_utils(apb2_master_base_test)
+
+  function new(string name, uvm_component parent);
+    super.new(.name(name), .parent(parent));
+  endfunction : new 
+
+  extern virtual function void build_phase(uvm_phase phase);
+  extern virtual function void connect_phase(uvm_phase phase);
+  extern virtual task main_phase (uvm_phase phase);
+
+endclass : apb2_master_base_test
+
