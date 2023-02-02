@@ -24,3 +24,27 @@
 */
 
 
+class apb2_master_fcov extends uvm_subscriber #(apb2_master_xactn);
+
+  apb2_master_xactn tr;
+
+  `uvm_component_utils_begin(apb2_master_fcov)
+  `uvm_component_utils_end
+
+
+  covergroup apb2_master_cvg;
+
+    option.per_instance = 1;
+
+  endgroup : apb2_master_cvg
+
+  function new (string name, uvm_component parent);
+    super.new(.name(name), .parent(parent));
+    this.apb2_master_cvg = new();
+  endfunction : new 
+
+  extern virtual function void write(apb2_master_xactn t);
+  extern virtual function void report_phase (uvm_phase phase);
+
+endclass : apb2_master_fcov
+

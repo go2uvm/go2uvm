@@ -24,3 +24,12 @@
 */
 
 
+class apb2_master_sequencer extends uvm_sequencer #(apb2_master_xactn); 
+
+  `uvm_component_utils(apb2_master_sequencer)
+
+  function new(string name, uvm_component parent);
+    super.new(.name(name), .parent(parent));
+  endfunction : new 
+ 
+endclass : apb2_master_sequencer

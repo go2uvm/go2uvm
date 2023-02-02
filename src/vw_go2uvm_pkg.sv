@@ -95,3 +95,6 @@ endpackage : vw_go2uvm_pkg
 `endif // VW_GO2UVM_SVH
 import vw_go2uvm_pkg::*;
 
+`include "vw_go2uvm_sim_utils.sv"
+`include "vw_go2uvm_clk_utils.sv"
+

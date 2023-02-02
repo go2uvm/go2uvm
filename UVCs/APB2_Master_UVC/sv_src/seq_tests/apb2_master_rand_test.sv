@@ -24,3 +24,14 @@
 */
 
 
+task apb2_master_rand_test::main_phase(uvm_phase phase);
+  phase.raise_objection(this);
+  `uvm_info(get_name(),"Test is running...",UVM_MEDIUM)
+
+  apb2_master_rand_seq_0 = apb2_master_rand_seq::type_id::create("apb2_master_rand_seq_0");
+  this.apb2_master_rand_seq_0.start(apb2_master_env_0.apb2_master_agent_0.apb2_master_sequencer_0);
+
+  `uvm_info(get_name(),"End of main phase in test",UVM_MEDIUM)
+  phase.drop_objection(this);
+
+endtask : main_phase

@@ -24,3 +24,15 @@
 */
 
 
+class apb2_master_rand_seq extends uvm_sequence #(apb2_master_xactn);
+
+  `uvm_object_utils(apb2_master_rand_seq)
+
+  function new(string name = "apb2_master_rand_seq");
+    super.new(name);
+  endfunction : new 
+
+  extern virtual task body();
+
+endclass : apb2_master_rand_seq
+

@@ -24,3 +24,16 @@
 */
 
 
+//module apb2_master_sva_bind;
+
+  bind apb2_master_if apb2_master_assertions_if apb2_master_if_0(.pclk    (pclk    ),
+                                                                 .presetn (presetn ),
+                                                                 .pwrite  (pwrite  ),
+                                                                 .penable (penable ),
+                                                                 .pwdata  (pwdata  ),
+                                                                 .paddr   (paddr   ),
+                                                                 .prdata  (prdata  ),
+                                                                 .pselx   (pselx   ) 
+                                                                );
+
+//endmodule:apb2_master_sva_bind

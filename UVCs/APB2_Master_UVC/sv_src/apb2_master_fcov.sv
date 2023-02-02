@@ -24,3 +24,14 @@
 */
 
 
+function void apb2_master_fcov::write(apb2_master_xactn t);
+  this.tr = t;
+  this.apb2_master_cvg.sample();
+endfunction : write
+
+
+
+function void apb2_master_fcov::report_phase (uvm_phase phase);
+  `g2u_printf (("Test achieved functional coverage:0.00%", this.apb2_master_cvg.get_coverage()))
+endfunction : report_phase
+

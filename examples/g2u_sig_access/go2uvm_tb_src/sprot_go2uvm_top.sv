@@ -37,6 +37,9 @@
 module sprot_go2uvm;
   parameter VW_CLK_PERIOD = 10;
 
+  reg aldec_dest_ex;
+  reg aldec_src_ex;
+
   // Simple clock generator
   bit `VW_CLK ;
   always # (VW_CLK_PERIOD/2) `VW_CLK <= ~`VW_CLK;
@@ -61,6 +64,7 @@ module sprot_go2uvm;
   // Using VW_Go2UVM
   sprot_test sprot_test_0;
   initial begin : go2uvm_test
+
     sprot_test_0 = new ();
     // Connect virtual interface to physical interface
     `G2U_SET_VIF(sprot_if,sprot_if_0)

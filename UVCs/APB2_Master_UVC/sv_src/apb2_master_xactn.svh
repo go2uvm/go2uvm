@@ -24,3 +24,23 @@
 */
 
 
+class apb2_master_xactn extends uvm_sequence_item; 
+
+  rand logic [ADDR_WIDTH-1:0]addr;
+  rand logic [DATA_WIDTH-1:0]data;
+  logic [DATA_WIDTH-1:0]act_data_for_sbrd;
+  logic [DATA_WIDTH-1:0]exp_data_for_sbrd;
+
+  rand apb_kind_e kind;
+
+  `uvm_object_utils_begin(apb2_master_xactn)
+    `uvm_field_int(addr,UVM_ALL_ON)
+    `uvm_field_int(data,UVM_ALL_ON)
+    `uvm_field_enum(apb_kind_e,kind,UVM_ALL_ON)
+  `uvm_object_utils_end
+ 
+  function new(string name="apb2_master_xactn");
+    super.new(name);
+  endfunction : new
+
+endclass : apb2_master_xactn

@@ -24,3 +24,25 @@
 */
 
 
+class apb2_master_driver extends uvm_driver #(apb2_master_xactn);
+ 
+  virtual apb2_master_if vif;
+  apb2_master_xactn item;
+
+  function new(string name, uvm_component parent);
+    super.new(.name(name), .parent(parent));
+  endfunction : new
+
+  `uvm_component_utils_begin(apb2_master_driver)
+    `uvm_field_object(item,UVM_ALL_ON)
+  `uvm_component_utils_end
+
+  extern virtual task reset_phase(uvm_phase phase);
+  extern virtual task main_phase(uvm_phase phase);
+  extern virtual task send_to_dut(input apb2_master_xactn  item);
+  extern virtual task apb_write(input [ADDR_WIDTH-1:0] addr, 
+				input [DATA_WIDTH-1:0] data);
+  extern virtual task apb_read(input [ADDR_WIDTH-1:0] addr); 
+
+endclass : apb2_master_driver
+

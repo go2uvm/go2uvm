@@ -24,3 +24,13 @@
 */
 
 
+function void apb2_master_env::build_phase(uvm_phase phase);
+  super.build_phase(.phase(phase));
+  apb2_master_agent_0 = apb2_master_agent::type_id::create(.name("apb2_master_agent"),
+                                      .parent(this));
+
+  uvm_config_db#(uvm_active_passive_enum)::set(.cntxt(this),
+                                               .inst_name("*"),
+                                               .field_name("is_active"),
+                                               .value(UVM_ACTIVE));
+endfunction : build_phase

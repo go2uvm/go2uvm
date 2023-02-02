@@ -24,3 +24,17 @@
 */
 
 
+class apb2_master_rand_test extends apb2_master_base_test;
+
+  `uvm_component_utils(apb2_master_rand_test)
+
+  apb2_master_rand_seq apb2_master_rand_seq_0;
+
+  extern virtual task main_phase(uvm_phase phase);
+
+  function new(string name, uvm_component parent = null);
+    super.new(.name(name), .parent(parent));
+  endfunction : new 
+
+endclass : apb2_master_rand_test
+
