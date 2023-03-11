@@ -44,17 +44,12 @@ package vw_go2uvm_pkg;
 
   parameter GO2UVM_WDOG_DEL_IN_NS = 10000;
 
-`pragma protect data_method = "aes128-cbc"
-`pragma protect author = "IP Provider", author_info = "Widget 5 v3.2"
-`pragma protect key_keyowner = "Mentor Graphics Corporation"
-`pragma protect key_method = "rsa"
-`pragma protect key_keyname = "MGC-VERIF-SIM-RSA-2"
-`pragma protect begin
 
   `include "vw_go2uvm_macros.svh"
   `include "vw_go2uvm_types.svh"
 
 
+`ifndef VERILATOR
   // Prototypes
   `include "vw_go2uvm_version.svh"
   `include "vw_go2uvm_sig_access.svh"
@@ -68,6 +63,7 @@ package vw_go2uvm_pkg;
   `include "vw_go2uvm_base_test.sv"
 
   `include "vw_go2uvm_chkr_lib.sv"
+`endif // VERILATOR
 
 
   function string get_name();
@@ -78,6 +74,7 @@ package vw_go2uvm_pkg;
     log_id = s;
   endfunction : set_name
 
+`ifndef VERILATOR
  function void g2u_force (string sig_name, 
     logic [`VW_G2U_SIG_MAX_W-1:0] sig_val, 
     bit verbose = 1,
@@ -85,11 +82,11 @@ package vw_go2uvm_pkg;
     go2uvm_sig_access::g2u_force (sig_name, 
       sig_val, verbose,is_vhdl_sig);
  endfunction : g2u_force 
+`endif // VERILATOR
 
   string plus_args_in_code [$];
   string plus_args_from_user [string];
 
-`pragma protect end
 
 endpackage : vw_go2uvm_pkg
 `endif // VW_GO2UVM_SVH

@@ -15,6 +15,7 @@ function void chk_premature_eot();
   end : zero_time_end
 endfunction : chk_premature_eot
 
+`ifndef VERILATOR
 function void report_summarize ();
   uvm_report_server srvr;           
   int vw_num_errs;
@@ -43,6 +44,7 @@ function void report_summarize ();
     "Thanks for using VerifWorks's Go2UVM Package, provide your feedback at http://www.verifworks.com",
     UVM_NONE)
   endfunction : report_summarize
+`endif // VERILATOR
 
 endmodule : vw_go2uvm_sim_utils
 
