@@ -245,6 +245,7 @@
      plus_args_in_code.push_back (str); \
    end
 
+`define G2U_VPA $value$plusargs
 
 
 `endif // VW_GO2UVM_MACROS_SV
