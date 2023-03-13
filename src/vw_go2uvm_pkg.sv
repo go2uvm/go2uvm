@@ -32,6 +32,10 @@
 `ifndef VW_GO2UVM_SVH
 `define VW_GO2UVM_SVH
 
+`ifdef VERILATOR_UVM_LITE
+  `include "vw_go2uvm_lite_verilator.sv"
+`endif // VERILATOR_UVM_LITE
+
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
