@@ -362,28 +362,26 @@ function string ivl_uvm_compose_message(
     string time_str;
     string line_str;
     string name;
+	  string af_vlt_str;
 
     
     // sv = uvm_severity_type'(severity);
     sv = get_uvm_severity_type_str (severity);
     $swrite(time_str, "%0t", $realtime);
+
+    // AF
+    $display ("AF: name: %s fname: %s", name, filename);
+	  af_vlt_str = $sformatf 
+          ("%s %s(%s) @ %s: %s [%s] %s", 
+            sv, 
+           filename, 
+           line_str,
+           time_str, 
+           name, 
+           id, 
+           message);
+    return af_vlt_str;
  
-    case(1)
-      (name == "" && filename == ""):
-	       return {sv, " @ ", time_str, " [", id, "] ", message};
-      (name != "" && filename == ""):
-	       return {sv, " @ ", time_str, ": ", name, " [", id, "] ", message};
-      (name == "" && filename != ""):
-           begin
-               $swrite(line_str, "%0d", line);
-		 return {sv, " ",filename, "(", line_str, ")", " @ ", time_str, " [", id, "] ", message};
-           end
-      (name != "" && filename != ""):
-           begin
-               $swrite(line_str, "%0d", line);
-	         return {sv, " ", filename, "(", line_str, ")", " @ ", time_str, ": ", name, " [", id, "] ", message};
-           end
-    endcase
   endfunction : ivl_uvm_compose_message
 
 `define IVL_UVM_REF 
